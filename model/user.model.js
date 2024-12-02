@@ -13,10 +13,10 @@ const userSchema = new Schema({
     password:{
         type:String,
         required:true,
-        unique:true
     }
 });
 
 const useModel = db.model('User', userSchema);
 
 module.exports = useModel;
+
