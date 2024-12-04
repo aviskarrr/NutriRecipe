@@ -1,24 +1,4 @@
-// const userService = require('../services/user.services');
-
-// exports.register = async(req, res, next)=>{
-//     try{
-//         console.log('Request body:', req.body);
-//         const {email, password} = req.body;
-
-//         const successRes = await userService.registerUser(email, password);
-
-//         res.json({
-//             success:true,
-//             message:'User registered successfully',
-//             data:successRes
-//         });
-
-//     }catch(error){
-//         next(error);
-//     }
-// };
-
-
+const userService = require('../services/user.services');
 
 exports.register = async (req, res, next) => {
     try {
@@ -34,8 +14,7 @@ exports.register = async (req, res, next) => {
 
         res.json({
             success: true,
-            message: 'User registered successfully',
-            data: successRes,
+            message: 'User registered successfully'
         });
     } catch (error) {
         console.error('Error in registration:', error);
