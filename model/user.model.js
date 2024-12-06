@@ -51,6 +51,7 @@ userSchema.methods.isValidPassword = async function(newPassword){
 }
 
 
+
 const useModel = db.model('User', userSchema);
 
 module.exports = useModel;
