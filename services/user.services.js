@@ -19,8 +19,6 @@ class userService{
         }
     }
 
-
-
     static async generateToken(tokenData, secretKey, jwt_expiry){
         return jwt.sign(tokenData, secretKey, {expiresIn:jwt_expiry})
     }
