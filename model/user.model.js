@@ -19,17 +19,30 @@ const { Schema } = mongoose;
 //new schema with hashing
 //we will use a library called bcrypt to hash the password
 const userSchema = new Schema({
-    email:{
-        type:String,
-        required:true,
-        unique:true,
-        lowercase:true
+    email: {
+        type: String,
+        required: [true, 'Email is required'],
+        unique: true,
+        lowercase: true,
+        match: [/^\S+@\S+\.\S+$/, 'Please provide a valid email address'] // Email format validation
     },
-    password:{
-        type:String,
-        required:true
+    password: {
+        type: String,
+        required: [true, 'Password is required'],
+        minlength: [8, 'Password must be at least 8 characters long'] // Enforce minimum password length
+    },
+    fullname: {
+        type: String,
+        required: [true, 'Full name is required'],
+        trim: true // Remove unnecessary whitespaces
+    },
+    phone: {
+        type: String,
+        required: [true, 'Phone number is required'],
+        match: [/^\d{10}$/, 'Please provide a valid 10-digit phone number'] // Example regex for 10-digit numbers
     }
 });
+
 
 userSchema.pre('save', async function(next){
     try{
