@@ -30,6 +30,29 @@ class userService{
             throw new Error('Error generating token: ' + error.message);
         }
     }
+
+
+    // static async deleteUser(userId, requestingUserId, isAdmin = false) {
+    //     try {
+    //         const user = await userModel.findById(userId);//find user by id
+    //         if (!user) {
+    //             throw new Error('User not found');
+    //         }
+    
+    //         // Check if the requester is authorized
+    //         if (userId !== requestingUserId && !isAdmin) {
+    //             throw new Error('Unauthorized: You can only delete your own account');
+    //         }
+    
+    //         // Delete the user
+    //         await userModel.findByIdAndDelete(userId);
+    //         return { message: 'User successfully deleted' };
+    //     } catch (error) {
+    //         throw new Error('Error deleting user: ' + error.message);
+    //     }
+    // }
+
+
 }
 
 module.exports = userService;
