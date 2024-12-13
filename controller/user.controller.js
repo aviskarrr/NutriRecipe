@@ -89,5 +89,6 @@ exports.login = async (req, res, next) => {
         console.error('Error in login:', error);
         next(error); // Pass the error to middleware
     }
+    
 };
 
