@@ -11,3 +11,6 @@ const userControl = require('../controller/user.controller');
 router.post('/registration', userControl.register);//register user
 router.post('/login', userControl.login);//login user
 module.exports = router;
+
+
+

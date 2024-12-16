@@ -29,12 +29,13 @@ const express = require('express');
 const userRoute = require('./routers/user.route');
 const bodyParser = require('body-parser');
 
-
-
 const app = express();
 app.use(bodyParser.json()); // Parses application/json
-// app.use(express.json()); // Parses incoming JSON requests
+app.use(express.json()); // Parses incoming JSON requests
 
 app.use('/', userRoute);
 
 module.exports = app;
+
+
+

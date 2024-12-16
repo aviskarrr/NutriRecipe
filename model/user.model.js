@@ -40,11 +40,11 @@ const userSchema = new Schema({
         type: String,
         required: [true, 'Phone number is required'],
         match: [/^\d{10}$/, 'Please provide a valid 10-digit phone number'] // Example regex for 10-digit numbers
-    }, 
-    avatar: {
-        type: String,
-        default: 'default.jpg'
-    }
+    } 
+    // avatar: {
+    //     type: String,
+    //     default: 'default.jpg'
+    // }
 });
 
 
